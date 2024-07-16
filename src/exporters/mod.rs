@@ -855,7 +855,7 @@ impl MetricGenerator {
     fn gen_kubernetes_pods_basic_metadata(&mut self) {
         if self.watch_kubernetes {
             if let Some(kubernetes) = self.kubernetes_client.as_mut() {
-                if let Ok(pods_result) = kubernetes.list_pods("".to_string()) {
+                if let Ok(pods_result) = kubernetes.list_all_pods() {
                     self.pods = pods_result;
                     debug!("Found {} pods", &self.pods.len());
                 } else {

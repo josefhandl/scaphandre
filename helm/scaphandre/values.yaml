@@ -1,6 +1,7 @@
 image:
   name: hubblo/scaphandre
   tag: latest
+  pullPolicy: Always
 
 port: 8080
 

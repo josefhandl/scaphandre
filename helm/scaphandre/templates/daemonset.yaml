@@ -19,6 +19,7 @@ spec:
       containers:
       - name:  {{ template "scaphandre.name" . }}
         image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+        imagePullPolicy: "{{ .Values.image.pullPolicy }}"
         args:
             {{- range $key, $value := .Values.scaphandre.args }}
             {{- if $value }}

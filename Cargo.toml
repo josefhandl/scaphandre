@@ -28,7 +28,9 @@ time = "0.3"
 colored = "2.0"
 chrono = "0.4"
 docker-sync = { version = "0.1.2", optional = true }
-k8s-sync = { version = "0.2.3", optional = true }
+#k8s-sync = { version = "0.2.3", optional = true }
+#k8s-sync = { path = "../rs-k8s-sync", optional = true }
+k8s-sync = { git = "https://github.com/josefhandl/rs-k8s-sync.git", branch = "list_all_pods_patch", optional = true }
 hyper = { version = "0.14", features = ["full"], optional = true }
 tokio = { version = "1.26.0", features = ["full"], optional = true}
 sysinfo = { version = "0.28.3"}
