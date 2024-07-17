@@ -186,6 +186,7 @@ impl MetricGenerator {
                     Ok(docker) => {
                         docker_client = Some(docker);
                         container_runtime = true;
+                        info!("Successfully connected to docker socket");
                     }
                     Err(err) => {
                         info!("Couldn't connect to docker socket. Error: {}", err);
@@ -194,6 +195,7 @@ impl MetricGenerator {
                 if let Ok(kubernetes) = get_kubernetes_client() {
                     kubernetes_client = Some(kubernetes);
                     container_runtime = true;
+                    info!("Successfully connected to kubernetes API.");
                 } else {
                     info!("Couldn't connect to kubernetes API.");
                 }
